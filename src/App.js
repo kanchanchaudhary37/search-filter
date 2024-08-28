@@ -1,5 +1,5 @@
 import './App.css';
-import SearchFilter from './searchFilter';
+import SearchFilter from './components/searchFilter';
 
 function App() {
   return (

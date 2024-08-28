@@ -30,26 +30,33 @@ const SearchFilter = () => {
   );
 
   if (loading) {
-    return <p>Loading...</p>;
+    return <p className="text-center text-lg">Loading...</p>;
   }
 
   if (error) {
-    return <p>Error: {error}</p>;
+    return <p className="text-center text-red-500">Error: {error}</p>;
   }
 
   return (
-    <div>
-      <h2>Search Filter Component</h2>
+    <div className="max-w-md mx-auto p-6 bg-white rounded-lg shadow-md">
+      <h2 className="text-2xl font-semibold mb-4 text-center">Search Filter Component</h2>
       <input
         type="text"
         placeholder="Search for users..."
         value={searchQuery}
         onChange={e => setSearchQuery(e.target.value)}
+        className="w-full p-2 border border-slate-300 rounded-lg focus:outline-none focus:border-blue-500 transition duration-200"
       />
-      <ul>
-        {filteredUsers.map(user => (
-          <li key={user.id}>{user.name}</li>
-        ))}
+      <ul className="list-none mt-4">
+        {filteredUsers.length === 0 ? (
+          <li className="text-center text-gray-500">No users found.</li>
+        ) : (
+          filteredUsers.map(user => (
+            <li key={user.id} className="py-2 px-4 border-b border-slate-200 hover:bg-slate-100 transition duration-200">
+              {user.name}
+            </li>
+          ))
+        )}
       </ul>
     </div>
   );
