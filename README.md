@@ -17,5 +17,5 @@ You may also see any lint errors in the console.
 ### `npm test`
 
 
-Runs the app in the production mode.\
+## Runs the app in the production mode.\
 Open [https://searchfiltervrit.netlify.app/](https://searchfiltervrit.netlify.app/) to view it in your browser.
